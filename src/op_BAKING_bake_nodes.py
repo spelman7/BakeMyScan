@@ -111,7 +111,7 @@ class bake_cycles_textures_nodes(bpy.types.Operator):
         print("Baking finished in %f seconds." % (time.time() - t0))
 
         principledNode = mat.node_tree.nodes["Principled BSDF"]
-        links.new(principledNode.inputs["Base Color"], image_tex_node.outputs["Color"])
+        mat.node_tree.links.new(principledNode.inputs["Base Color"], image_tex_node.outputs["Color"])
 
         # self.report({'INFO'}, "Baking successful")
         return{'FINISHED'}
