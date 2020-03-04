@@ -15,12 +15,12 @@ class colmap_auto(bpy.types.Operator):
     bl_options = {"REGISTER"}
 
 
-    mesher  = bpy.props.EnumProperty(items= ( ('delaunay', 'delaunay', 'delaunay'), ("poisson", "poisson", "poisson")) , description="Mesher", default="delaunay")
-    quality = bpy.props.EnumProperty(items= ( ('low', 'low', 'low'), ("medium", "medium", "medium"), ("high", "high", "high")) , description="Quality", default="medium")
-    sparse = bpy.props.BoolProperty(description="Sparse", default=True)
-    dense  = bpy.props.BoolProperty(description="Dense", default=True)
-    single = bpy.props.BoolProperty(description="Single Camera", default=True)
-    gpu    = bpy.props.BoolProperty(description="GPU", default=True)
+    mesher: bpy.props.EnumProperty(items= ( ('delaunay', 'delaunay', 'delaunay'), ("poisson", "poisson", "poisson")) , description="Mesher", default="delaunay")
+    quality: bpy.props.EnumProperty(items= ( ('low', 'low', 'low'), ("medium", "medium", "medium"), ("high", "high", "high")) , description="Quality", default="medium")
+    sparse: bpy.props.BoolProperty(description="Sparse", default=True)
+    dense: bpy.props.BoolProperty(description="Dense", default=True)
+    single: bpy.props.BoolProperty(description="Single Camera", default=True)
+    gpu: bpy.props.BoolProperty(description="GPU", default=True)
 
     def check(self, context):
         return True
@@ -74,12 +74,12 @@ class colmap_openmvs(bpy.types.Operator):
     bl_options = {"REGISTER"}
 
 
-    single = bpy.props.BoolProperty(description="Single Camera", default=True)
-    gpu    = bpy.props.BoolProperty(description="GPU", default=True)
-    reconstruct_distance = bpy.props.FloatProperty(description="Pixel distance", default=2.5, min=1., max=20.)
-    texture_resolution = bpy.props.IntProperty(description="Scale factor for texturing", default=2, min=0, max=5)
-    densify_resolution=bpy.props.IntProperty(description="Scale factor for densifying", default=2, min=0, max=5)
-    min_size=bpy.props.IntProperty(description="Minimal texture size", default=640, min=128, max=4096)
+    single: bpy.props.BoolProperty(description="Single Camera", default=True)
+    gpu: bpy.props.BoolProperty(description="GPU", default=True)
+    reconstruct_distance: bpy.props.FloatProperty(description="Pixel distance", default=2.5, min=1., max=20.)
+    texture_resolution: bpy.props.IntProperty(description="Scale factor for texturing", default=2, min=0, max=5)
+    densify_resolution: bpy.props.IntProperty(description="Scale factor for densifying", default=2, min=0, max=5)
+    min_size: bpy.props.IntProperty(description="Minimal texture size", default=640, min=128, max=4096)
 
     def check(self, context):
         return True

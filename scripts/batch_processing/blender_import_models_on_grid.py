@@ -42,7 +42,7 @@ for m in models:
     #Import the model and make it active
     bpy.ops.bakemyscan.import_scan(filepath = os.path.join(args.input, m))
     obj = [o for o in bpy.data.objects if o.select][0]
-    bpy.context.scene.objects.active = obj
+    bpy.context.view_layer.objects.active = obj
     obj.name = name
 
     #Try to create a material from a texture

@@ -161,9 +161,9 @@ if __name__ == "__main__":
         sys.exit(2)
     #Set the executables in the addon user preferences
     try:
-        bpy.context.user_preferences.addons["BakeMyScan"].preferences.mmgs          = args.mmgs
-        bpy.context.user_preferences.addons["BakeMyScan"].preferences.instant       = args.instant
-        bpy.context.user_preferences.addons["BakeMyScan"].preferences.meshlabserver = args.meshlabserver
+        bpy.context.preferences.addons["BakeMyScan"].preferences.mmgs          = args.mmgs
+        bpy.context.preferences.addons["BakeMyScan"].preferences.instant       = args.instant
+        bpy.context.preferences.addons["BakeMyScan"].preferences.meshlabserver = args.meshlabserver
         bpy.types.Scene.executables["mmgs"] = args.mmgs
         bpy.types.Scene.executables["instant"] = args.instant
         bpy.types.Scene.executables["meshlabserver"] = args.meshlabserver
@@ -197,7 +197,7 @@ if __name__ == "__main__":
         source = bpy.data.objects["Suzanne"]
         bpy.ops.mesh.primitive_monkey_add(calc_uvs=True)
         target = bpy.context.active_object
-        source.select = True
+        source.select_set(True)
 
     def assert_model_imported():
         assert(len(bpy.data.objects) == 1)

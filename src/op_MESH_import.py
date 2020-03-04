@@ -13,7 +13,7 @@ class import_mesh(bpy.types.Operator, ImportHelper):
     """Import a Mesh file"""
     bl_idname = "bakemyscan.import_mesh"
     bl_label  = "Imports a .mesh file"
-    filter_glob = bpy.props.StringProperty(
+    filter_glob: bpy.props.StringProperty(
         default="*.mesh",
         options={'HIDDEN'},
     )

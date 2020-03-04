@@ -240,21 +240,27 @@ def node_tree_pbr():
     _ao_mix.location = [-200, 0]
     _vertexcolors.location = [-400,0]
     _metallic.location = [-200, -200]
-    _metallic.color_space = "NONE"
+    if _metallic.image:
+        _metallic.image.colorspace_settings.is_data = True
     _roughness.location = [-200, -400]
-    _roughness.color_space = "NONE"
+    if _roughness.image:
+        _roughness.image.colorspace_settings.is_data = True
     _glossiness.location = [-400, -400]
     _glossiness_invert.location = [-200, -400]
-    _glossiness.color_space = "NONE"
+    if _glossiness.image:
+        _glossiness.image.colorspace_settings.is_data = True
     _bump.location = [-200, -600]
     _nmap.location = [-400, -700]
     _height.location = [-400, -500]
     _normal.location = [-600, -700]
-    _normal.color_space = "NONE"
+    if _normal.image:
+        _normal.image.colorspace_settings.is_data = True
     _subsurface.location = [-200, -100]
-    _subsurface.color_space = "NONE"
+    if _subsurface.image:
+        _subsurface.image.colorspace_settings.is_data = True
     _transmission.location = [-200, -600]
-    _transmission.color_space = "NONE"
+    if _transmission.image:
+        _transmission.image.colorspace_settings.is_data = True
     #Post-shader emission and opacity mix
     _emission.location = [-200, 200]
     _emission_shader.location = [0, 200]

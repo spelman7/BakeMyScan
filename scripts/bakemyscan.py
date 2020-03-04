@@ -164,7 +164,7 @@ if __name__ == "__main__":
     bpy.ops.object.shade_smooth()
 
     #Bake
-    original.select=True
+    original.select_set(True)
     bpy.ops.bakemyscan.bake_textures(
         resolution    = args.resolution,
         bake_albedo   = args.color is not None,
@@ -178,6 +178,6 @@ if __name__ == "__main__":
     )
 
     #Export
-    original.select = False
+    original.select_set(False)
     bpy.ops.bakemyscan.remove_all_but_selected()
     bpy.ops.bakemyscan.export(filepath=args.output, compress=args.zip)
